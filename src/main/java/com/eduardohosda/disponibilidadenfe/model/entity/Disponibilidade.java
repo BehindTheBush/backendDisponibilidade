@@ -5,21 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="disponibilidade")
-/*
-* Afim de deixar o codigo mais limpo adicionei o Lombok, para gerar os getter e setter em tempo de compilação
-* Para que não fique com erro na IDE basta instalar o plugin do lombok
-*/
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Disponibilidade {
 
-    //Entidade Disponibilidade alimentado pelo site nfe.fazenda.gov.br/portal/disponobilidade
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -55,6 +49,5 @@ public class Disponibilidade {
     public void prePersist(){
         setDataCadastro(LocalDateTime.now());
     }
-
 
 }

@@ -10,7 +10,6 @@ import java.util.List;
 @Repository
 public interface DisponibilidadeRepository extends JpaRepository<Disponibilidade, Long> {
 
-    //List<Disponibilidade> findByAutorizador(String autorizador);
     List<Disponibilidade> findByDataCadastroBetween(LocalDateTime dataInicial, LocalDateTime dataFinal);
     List<Disponibilidade> findFirst15ByOrderByDataCadastroDesc();
     Disponibilidade findFirstByAutorizadorOrderByDataCadastroDesc(String autorizador);

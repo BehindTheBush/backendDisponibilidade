@@ -1,0 +1,5 @@
+com\eduardohosda\disponibilidadenfe\DisponibilidadenfeApplication.class
+com\eduardohosda\disponibilidadenfe\model\entity\Disponibilidade.class
+com\eduardohosda\disponibilidadenfe\model\DTO\DisponibilidadeDTO.class
+com\eduardohosda\disponibilidadenfe\controller\DisponibilidadeController.class
+com\eduardohosda\disponibilidadenfe\model\repository\DisponibilidadeRepository.class

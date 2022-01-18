@@ -78,19 +78,14 @@ public class DisponibilidadeController {
 
     @GetMapping("/status")
     public List<Disponibilidade> disponibilidadeAtual(){
-        //Personalizado para buscar as ultimos 15 registros
-        List <Disponibilidade> disponibilidades = disponibilidadeRepository.findFirst15ByOrderByDataCadastroDesc();
-
-        return disponibilidades;
+        return disponibilidadeRepository.findFirst15ByOrderByDataCadastroDesc();
     }
 
     @GetMapping("/status/estado")
     public Disponibilidade disponibilidadeAtualPorEstado(
             @RequestParam("autorizador") String autorizador
     ){
-        //personalizado para pegar o ultimo registro do autorizador
-        Disponibilidade disponibilidade = disponibilidadeRepository.findFirstByAutorizadorOrderByDataCadastroDesc(autorizador);
-        return disponibilidade;
+        return disponibilidadeRepository.findFirstByAutorizadorOrderByDataCadastroDesc(autorizador);
     }
 
     @GetMapping("/status/data")
@@ -98,9 +93,7 @@ public class DisponibilidadeController {
             @RequestParam("data_inicial")  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataInicial,
             @RequestParam("data_final")  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataFinal
     ){
-        //Personalizado para buscar valores entre datas
-        List <Disponibilidade> disponibilidades = disponibilidadeRepository.findByDataCadastroBetween(dataInicial, dataFinal);
-        return disponibilidades;
+        return disponibilidadeRepository.findByDataCadastroBetween(dataInicial, dataFinal);
     }
 
     @GetMapping("/status/indisponibilidade")
